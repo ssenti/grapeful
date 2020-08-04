@@ -1,0 +1,507 @@
+
+
+
+@font-face {
+    font-family: 'billabong'; /*a name to be used later*/
+    src: url(billabong.ttf);
+}
+
+
+/*.navbar-navbar-default > .container{
+
+
+  margin-left:10vw;
+  margin-right: 10vw;
+
+}*/
+
+.navbar {
+  max-width: 75vw;
+  background: white;
+  outline: none;
+  border: none;
+  margin: 0 auto;
+}
+
+nav > .container {
+  max-width: 75vw;
+}
+
+.container {
+  vertical-align: middle;
+}
+
+:root {
+  --main-font-family: arial;
+  --font-weight: normal;
+  --side-font-family: 'billabong';
+  --main-bg-color: white;
+  --main-purple: #5b0a91;
+  --side-purple: #6f2da8;
+  --green-grape: #94932f;
+  --image-size: 20vw;
+  --image-size-big: 40vw;
+}
+
+
+.app_content {
+  margin-left: 10vw;
+  margin-right: 10vw;
+}
+
+
+.btn {
+
+  float: right;
+  margin-right: 5vw;
+  border: none;
+  font-weight: bold;
+  /*border: none;
+  background-color: #efefef;
+  padding: 5px 12px ;
+  font-weight: bold;
+  margin-right: 7vw;*/
+}
+
+/* header stuff */
+
+.foll {
+  float: left;
+}
+
+nav {
+  background-color: white;
+  border: none;
+  padding-top: 1em;
+
+}
+
+nav > div > div > a {
+  font-size: 5.5em;
+  text-decoration: none;
+  font-family:'billabong';
+  color: var(--main-purple);
+  margin-left: 0vw;
+}
+
+nav > div > div > p {
+  font-size: 1.2em;
+  text-decoration: none;
+  font-family: var(--main-font-family);
+  font-weight: bold;
+  color: var(--main-purple);
+}
+
+nav > div > div > a:hover,
+nav > div > div > a:focus {
+  color: var(--green-grape);
+  text-decoration: none;
+}
+
+.nav > li > a {
+  padding-top: 2em;
+  font-size: 1.2em;
+  color: var(--side-purple);
+  font-weight: bold;
+}
+
+.nav > li > a:hover,
+.nav > li > a:focus {
+  background-color: white;
+  text-decoration: none;
+  color: var(--green-grape);
+}
+
+.alert-alert-info {
+
+  color: var(--green-grape);
+  background: none;
+  margin-left: 10vw;
+  outline: none;
+  border: none;
+  font-weight: bold;
+}
+
+
+
+
+/* login page */
+
+
+h1 {
+  font-size: 2em;
+  color: black;
+  font-weight: bold;
+}
+
+
+.login_fields {
+  float: left;
+  list-style-type: none;
+}
+
+.login_button {
+  float: right;
+  list-style-type: none;
+  margin-right: 0;}
+
+/*
+.submit {
+  border: none;
+  background-color: #efefef;
+  padding: 5px 12px ;
+
+}
+
+.submit:hover {
+  border: none;
+  background-color: black;
+  padding: 5px 12px ;
+  color: white;
+}
+
+.submit:focus {
+  border: white;
+  background-color: black;
+  padding: 5px 12px ;
+  color: white;
+}*/
+
+.text_fields {
+  border: none;
+  border-bottom: 1px solid #5b0a91;
+  outline: none;
+  background-color: white;
+  padding: 0 0.5rem;
+}
+
+
+
+
+
+
+/* add posts */
+
+.post_title, .post_title:hover, .post_title:focus {
+  border: none;
+  outline: none;
+  border-bottom: 1px solid var(--main-purple);
+  background-color: var(--main-bg-color);
+  text-align: center;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+
+  float: center;
+  height: 24px;
+}
+
+.post_fields {
+  list-style-type: none;
+}
+
+.post_body, .post_body:hover, .post_body:focus, .post_body:active {
+  border: 1px solid var(--main-purple);
+  height: 15vw;
+  width: 35vw;
+  padding: 8px 12px;
+  font-family: var(--main-font-family);
+  font-weight: var(--font-weight);
+  outline: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  float: center;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  background-color: #efefef;
+  z-index: -1;
+  float: right;
+}
+
+/*
+.file_label {
+  border: none;
+  background-color: #efefef;
+  padding: 5px 12px ;
+  font-size: 13.333px;
+  float: right;
+  display: block;
+  margin-left: auto;
+  margin-right: 7vw;
+}
+
+.file_label:hover, .file_label:focus {
+  background-color: grey;
+  color: white;
+}
+*/
+
+
+
+input.danger {
+  color: #cc2f2e;
+}
+
+input[type=submit], .upload-label {
+  border: none;
+  background-color: #efefef;
+  padding: 5px 12px ;
+  /*float: right;*/
+}
+
+.upload-label {
+  font-weight: normal;
+}
+
+input[type=submit]:hover, .upload-label:hover {
+  border: none;
+  background-color: black;
+  padding: 5px 12px ;
+  color: white;
+}
+
+.upload-label:hover {
+  border: none;
+  background-color: darkgrey;
+  padding: 5px 12px ;
+  color: white;
+}
+
+input[type=submit]:focus, .upload-label:focus  {
+  border: white;
+  background-color: black;
+  padding: 5px 12px ;
+  color: white;
+}
+
+input[type=submit]:active, .upload-label:active  {
+  border: white;
+  background-color: black;
+  padding: 5px 12px ;
+  color: white;
+}
+
+
+/*the posts */
+
+.ul_pager {
+    list-style-type: none;
+}
+
+.newer_posts {
+  float: left;
+
+}
+
+.older_posts {
+  float: right;
+  margin-right: 9vw;
+}
+
+.imagee {
+  font-size: 3.8vw;
+  color: white;
+  font-family: var(--main-font-family);
+  font-weight: var(--font-weight);
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  position: relative;
+  width: var(--image-size);
+  height: var(--image-size);
+  max-height: var(--image-size);
+  max-width: var(--image-size);
+  /*padding: 20px 50px;
+  max-width:26.5vw;
+  max-height: 18vw;
+  min-width: 18vw;
+  min-height: 18vw;*/
+  background: center;
+  background-size: cover;
+  /*length
+  percentage
+  cover
+  contain
+  initial
+  display: table-cell;
+  inherit*/
+}
+
+.imagee_big {
+  font-size: 3.8vw;
+  color: white;
+  font-family: var(--main-font-family);
+  font-weight: var(--font-weight);
+  text-align: center;
+  vertical-align: middle;
+  border: none;
+  position: relative;
+  width: var(--image-size-big);
+  height: var(--image-size-big);
+  max-height: var(--image-size-big);
+  max-width: var(--image-size-big);
+  /*padding: 20px 50px;
+  max-width:26.5vw;
+  max-height: 18vw;
+  min-width: 18vw;
+  min-height: 18vw;*/
+  background: center;
+  background-size: cover;
+  /*length
+  percentage
+  cover
+  contain
+  initial
+  display: table-cell;
+  inherit*/
+}
+
+.ul_entries {
+  /*
+  justify-content: center;
+  display: flex;
+  margin-right: auto;
+  margin-left: auto;*/
+
+  position: absolute;
+
+  left: 0px;
+
+  margin-left: 0;
+
+  padding-left: 0;
+  left: 0%;
+  overflow-y: scroll;
+  overflow-x: hidden;
+
+}
+
+  .entries {
+    list-style: none;
+    float: left;
+  }
+
+  .image_desc {
+    color: rgba(0,0,0,0);
+    font-size: 0vw;
+
+  }
+
+.image_desc2 {
+  color: rgba(0,0,0,0);
+  font-size: 0vw;
+
+}
+
+    .imagee:hover, .imagee_big:hover {
+      font-size: 0vw;
+      text-decoration: none;
+      color: rgba(0, 0, 0, 0);
+      text-align: center;
+      vertical-align: middle;
+      font-family: var(--main-font-family);
+      font-weight: var(--font-weight);
+
+      /*f-webkit-filter: grayscale(70%) blur(3px);
+      filter: grayscale(70%) blur(3px);*/
+
+    }
+
+    .imagee:hover .image_desc, .imagee_big:hover .image_desc {
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      color: white;
+      background: black;
+      font-size: 2vw;
+      /*overflow: hidden;
+      overflow:hidden;
+      white-space:nowrap;
+      text-overflow: ellipsis;*/
+      display: inline-block;
+
+      /*-webkit-filter: grayscale(0%) blur(0px);
+      filter: grayscale(0%) blur(0px);
+
+      transition: 3s;*/
+
+    }
+
+
+
+    .imagee:hover .image_desc2, .imagee_big:hover .image_desc2{
+
+      position: absolute;
+      bottom: 2.5%;
+      right: 2.5%;
+
+      color: white;
+      background: black;
+      font-size: 1vw;
+
+
+
+
+      /*-webkit-filter: grayscale(0%) blur(0px);
+      filter: grayscale(0%) blur(0px);
+
+      margin-right: 2px;
+
+
+      text-decoration: none;
+      vertical-align: bottom;
+
+
+      transition: 3s;*/
+
+    }
+
+    .imagee:focus .image_desc, .imagee_big:focus .image_desc {
+      text-align: center;
+      text-decoration: none;
+      vertical-align: middle;
+      color: white;
+      background: black;
+      font-size: 2vw;
+      border: none;
+      outline:0;
+
+    }
+
+      .imagee:focus, .imagee_big:focus {
+        font-size: 0vw;
+        color: rgba(0, 0, 0, 0);
+        text-decoration: none;
+        text-align: center;
+        vertical-align: middle;
+        border: none;
+        outline:0;
+
+      }
+
+
+/* user profile */
+
+
+.table-table-hover {
+  outline: none;
+}
+
+.pager > li > a {
+  outline: none;
+  border: none;
+  background: white;
+
+}
+
+.pager > li > a:hover {
+  outline: none;
+  border: none;
+  background: white;
+}

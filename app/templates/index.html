@@ -1,0 +1,73 @@
+
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+{% block app_content %}
+<div class = "app_content">
+
+
+  {% if title == 'explore'%}
+
+  <h1>{{ _('explore mode!') }}</h1>
+
+  {%else %}
+
+    <h1>{{ _('hello, %(username)s!', username=current_user.username) }}</h1>
+
+    {%endif%}
+
+    {% if form %}
+    <form action="" method="post" role="form" enctype="multipart/form-data">
+      {{ form.csrf_token() }}
+      <ul class = "post_fields">
+        <li> {{ wtf.form_field(form.title, class='post_title', placeholder="something grapeful") }}
+        <li> {{ wtf.form_field(form.post, class='post_body', placeholder="describe your grape") }}
+
+
+
+        <li>  <label for="file" class = "btn btn-default upload-label" > upload a photo </label>
+          <br>
+
+          <br>
+                <li> {{ wtf.form_field(form.submit, class='btn btn-default') }}
+
+{{ wtf.form_field(form.filename, class='inputfile', id='file') }}
+
+
+
+
+      </ul>
+    </form>
+
+    <br>
+
+    {% endif %}
+  </div>
+
+
+  <nav aria-label="...">
+      <ul class="pager">
+          <li class="previous{% if not prev_url %} disabled{% endif %}">
+              <a class="pagerr" href="{{ prev_url or '#' }}">
+                  <span aria-hidden="true">&larr;</span> {{ _('newer grapes') }}
+              </a>
+          </li>
+          <li class="next{% if not next_url %} disabled{% endif %}">
+              <a class = "pagerr" href="{{ next_url or '#' }}">
+                  {{ _('older grapes') }} <span aria-hidden="true">&rarr;</span>
+              </a>
+          </li>
+      </ul>
+  </nav>
+
+    <ul class="ul_entries">
+
+    {% for post in posts %}
+        {% include '_post.html' %}
+    {% endfor %}
+
+    </ul>
+
+
+{% endblock %}

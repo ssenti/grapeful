@@ -1,0 +1,69 @@
+
+
+
+<li class="entries">
+
+
+{% if current_user.id == post.user_id %}
+  <form action="{{ url_for('main.delete', id = post.id) }}" method="post">
+
+
+  {% if post.title != 'DOGS' %}
+
+        <button style = "background-image: url({{ post.file_url }})"
+        class=imagee onclick="return confirm('are you sure you would like to delete?');"> {{ post.title }}
+
+
+      {% else %}
+      <button style = "background-image: url({{ post.file_url }})"
+      class=imagee_big onclick="return confirm('are you sure you would like to delete?');"> {{ post.title }}
+
+
+  {% endif %}
+
+        <span class = "image_desc" id="post{{ post.id }}">{{ post.body }} </span>
+
+
+
+        <div class = "image_desc2" id="post{{ post.id }}">
+
+          {{ _('you posted %(when)s',
+              when=moment(post.timestamp).fromNow()) }}
+
+        </div>
+
+</button>
+</form>
+
+
+
+
+
+{% else %}
+
+    <form action="{{ url_for('main.user', username=post.author.username) }}">
+
+{% if post.title != 'DOGS' %}
+
+    <button style = "background-image: url({{ post.file_url }})" class=imagee> {{ post.title }}
+{% else %}
+<button style = "background-image: url({{ post.file_url }})" class=imagee_big> {{ post.title }}
+  {% endif %}
+
+      <span class = "image_desc" id="post{{ post.id }}">{{ post.body }} </span>
+
+
+
+      <div class = "image_desc2" id="post{{ post.id }}">
+
+
+        {{ _('%(username)s added %(when)s',
+            username=post.author.username, when=moment(post.timestamp).fromNow()) }}
+
+      </div>
+
+    </button>
+    </form>
+
+
+{% endif %}

@@ -1,0 +1,42 @@
+
+
+{% extends "base.html" %}
+{% import 'bootstrap/wtf.html' as wtf %}
+
+
+{% block app_content %}
+<div class = "app_content">
+
+    <h1>{{ _('edit profile') }}</h1>
+
+    <form action="" method="post" class="form" role="form">
+      {{ form.csrf_token() }}
+
+  <div>
+        <ul class="login_fields">
+          <br>
+          <li> {{ wtf.form_field(form.username, class='text_fields') }}
+          <li> {{ wtf.form_field(form.about_me, class='post_body') }}
+
+    </div>
+
+    <div>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+
+    <ul class="login_fields">
+      <li class = "login_button"> {{ wtf.form_field(form.submit, class='btn btn-default') }}
+      </ul>
+    </div>
+
+</div>
+{% endblock %}

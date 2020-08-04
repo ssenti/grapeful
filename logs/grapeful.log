@@ -1,0 +1,51 @@
+2020-08-04 15:51:07,801 ERROR: Exception on /auth/login [POST] [in /Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py:1761]
+Traceback (most recent call last):
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/sqlalchemy/util/_collections.py", line 988, in __call__
+    return self.registry[key]
+KeyError: 123145570734080
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py", line 2292, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py", line 1815, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py", line 1718, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/_compat.py", line 35, in reraise
+    raise value
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py", line 1813, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask/app.py", line 1799, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/Users/jinhongkim/grapeful-yes/app/auth/routes.py", line 19, in login
+    user = User.query.filter_by(username=form.username.data).first()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 514, in __get__
+    return type.query_class(mapper, session=self.sa.session())
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/sqlalchemy/orm/scoping.py", line 78, in __call__
+    return self.registry()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/sqlalchemy/util/_collections.py", line 990, in __call__
+    return self.registry.setdefault(key, self.createfunc())
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/sqlalchemy/orm/session.py", line 2867, in __call__
+    return self.class_(**local_kw)
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 143, in __init__
+    bind = options.pop('bind', None) or db.engine
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 877, in engine
+    return self.get_engine()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 896, in get_engine
+    return connector.get_engine()
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 556, in get_engine
+    self._sa.apply_driver_hacks(self._app, info, options)
+  File "/Users/jinhongkim/grapeful-yes/venv/lib/python3.7/site-packages/flask_sqlalchemy/__init__.py", line 830, in apply_driver_hacks
+    if info.drivername.startswith('mysql'):
+AttributeError: 'NoneType' object has no attribute 'drivername'
+2020-08-04 15:52:49,971 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 15:53:17,374 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 15:54:11,403 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 15:55:52,490 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 15:56:37,271 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 15:57:28,047 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 16:00:01,102 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 16:04:29,325 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]
+2020-08-04 16:05:17,216 INFO: grapeful startup [in /Users/jinhongkim/grapeful-yes/app/__init__.py:80]

@@ -1,0 +1,109 @@
+
+
+<!doctype html>
+
+{% extends 'bootstrap/base.html' %}
+
+
+
+{% block head %}
+    {{ super() }}
+
+<head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🍷</text></svg>">
+</head>
+
+{% endblock %}
+
+<title>
+{% block title %}
+    {% if title %}
+      grapeful - {{ title }}
+    {% else %}
+      {{ _('welcome to grapeful') }}
+        {% endif %}
+{% endblock %}
+</title>
+
+
+
+
+
+
+
+{% block navbar %}
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container">
+
+            <div class="navbar-header">
+              
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href="{{ url_for('main.index') }}">grapeful</a>
+                <p> everything we feel grapeful about our lives </p>
+
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+               <li><a  class = "navbar-words" href="{{ url_for('main.index') }}"><img src="https://grapeful-yes.s3.ap-northeast-2.amazonaws.com/icons/home.png"></a></li>
+                  <li><a class = "navbar-words" href="{{ url_for('main.explore') }}"><img src="https://grapeful-yes.s3.ap-northeast-2.amazonaws.com/icons/explore.png"></a></li>
+                    {% if current_user.is_anonymous %}
+                    <li><a  class = "navbar-words" href="{{ url_for('auth.login') }}"><img src="https://grapeful-yes.s3.ap-northeast-2.amazonaws.com/icons/login.png"></a></li>
+                    {% else %}
+                    <li><a  class = "navbar-words" href="{{ url_for('main.user', username=current_user.username) }}"><img src="https://grapeful-yes.s3.ap-northeast-2.amazonaws.com/icons/profile.png"></a></li>
+                    <li><a class = "navbar-words" href="{{ url_for('auth.logout') }}"><img src="https://grapeful-yes.s3.ap-northeast-2.amazonaws.com/icons/logout.png"></a></li>
+
+                    {% endif %}
+                </ul>
+            </div>
+
+
+        </div>
+
+    </nav>
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+      <br>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert-alert-info" role="alert">{{ message }}</div>
+            {% endfor %}
+        {% else %}
+            <div class="alert-alert-info" role="alert">&nbsp;</div>
+        {% endif %}
+        {% endwith %}
+
+        {# application content needs to be provided in the app_content block #}
+        {% block app_content %}{% endblock %}
+    </div>
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    {{ moment.include_moment() }}
+    {{ moment.lang(g.locale) }}
+    <script>
+        function translate(sourceElem, destElem, sourceLang, destLang) {
+            $(destElem).html('<img src="{{ url_for('static', filename='loading.gif') }}">');
+            $.post('/translate', {
+                text: $(sourceElem).text(),
+                source_language: sourceLang,
+                dest_language: destLang
+            }).done(function(response) {
+                $(destElem).text(response['text'])
+            }).fail(function() {
+                $(destElem).text("{{ _('error: could not contact server') }}");
+            });
+        }
+    </script>
+{% endblock %}
