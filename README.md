@@ -1,7 +1,7 @@
 
 # Welcome to grapeful
 
-You can access the website through [here](http://www.grapeful.fun/).
+You can access the website through [here](http://www.grapeful.fun/](https://grapeful-yes.herokuapp.com/auth/login?next=%2Findex).
 
 Register now and start adding your "grapes" (things you feel grateful about your day) on the website!
 
